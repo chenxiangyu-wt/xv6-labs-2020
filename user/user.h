@@ -23,6 +23,7 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+int tarce(int); //用户程序的trace系统调用的跳板入口函数
 
 // ulib.c
 int stat(const char*, struct stat*);

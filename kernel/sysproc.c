@@ -8,6 +8,15 @@
 #include "proc.h"
 
 uint64
+sys_trace(void)
+{
+  int mask;
+  if(argint(0,&mask) < 0)return -1;     //获取从用户程序传入的数据
+
+  myproc()->kama_syscall_trace = mask;  //设置调用进程的kama_syscall_trace掩码mask
+  return 0;
+}
+uint64
 sys_exit(void)
 {
   int n;
